@@ -1,0 +1,132 @@
+---
+title: "Minería de Datos: Preprocesamiento y Clasificación"
+subtitle: 'Detección de outliers'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+### Detección de outliers
+
+Cargamos librerías y paquetes necesarios para el proyecto al completo
+```{r, message=FALSE, warning=FALSE}
+require(tidyverse)
+require(ggplot2)
+require(corrplot)
+require(Amelia)
+require(scales)
+require(gridExtra)
+
+```
+
+
+### Análisis descriptivo
+
+
+```{r, results='hold'}
+
+credit_ranking <- read.csv("data/training_data.csv", comment.char="@", header = TRUE)
+
+head(credit_ranking,10)
+```
+
+
+```{r, results='hold'}
+dim(credit_ranking)
+```
+
+
+
+```{r, results='hold'}
+str(credit_ranking)
+```
+
+
+```{r, results='hold'}
+summary(credit_ranking)
+```
+
+
+```{r, results='hold'}
+# Valores únicos
+unicos <- sapply(credit_ranking, function(columna){length(unique(columna))})
+unicos
+
+```
+
+
+```{r, fig.width=7, fig.height=3.5, results='hold'}
+missmap(credit_ranking, main="Missing Map")
+```
+
+
+```{r, results='hold'}
+# outliers
+outliers_all <- function(df){
+  
+   outliers <- lapply(names(df), function(col){
+     
+     iqr <- IQR(df[,col], na.rm=TRUE)
+     quartiles <- quantile(df[,col])
+     
+     inf <- quartiles[2] - (1.5*iqr)
+     max <- quartiles[4] + (1.5*iqr)
+     
+     inf_extreme <- quartiles[2] - (3*iqr)
+     max_extreme <- quartiles[4] + (3*iqr)
+     
+     outliers <- df[col]  %>% filter(df[,col] < inf | df[,col] > max) %>% 
+                          arrange(desc(col))
+     outliers_extreme <- df[col] %>% filter(
+                                        df[,col] < inf_extreme | 
+                                        df[,col] > max_extreme
+                                    ) %>% arrange(desc(col))
+     
+     c(outliers,outliers_extreme)
+    })
+  
+}
+
+# Quito columnas 
+filter_credit_ranking <- credit_ranking[, !names(credit_ranking) %in% c("ID", "X4", "X21", "X24", "X25", "X30","RATE")]
+
+out <- outliers_all(filter_credit_ranking)
+for (i in seq_along(out)) {
+  var_name <- names(out[[i]])[1]
+  cat("Clasificador:",var_name, "\n", 
+      "outliers:", length(out[[i]][[1]]), "\t", 
+      "% outliers: ", round( (length(out[[i]][[1]]) / dim(filter_credit_ranking)[1])*100, 2),"%","\t",
+      "outliers extremos:", length(out[[i]][[2]]), "\t", 
+      "% outliers extremos: ", round( (length(out[[i]][[2]]) / dim(filter_credit_ranking)[1])*100, 2),"%",
+      "\n\n")
+}
+
+```
+
+```{r, fig.width=13, fig.height=18, results='hold'}
+# Plot densidad
+density_histogram_plot_all <- function(df) {
+  plots <- lapply(names(df), function(col){
+    # Reescalamos entre 0 y 1, para que los gráficos tengan más suavidad
+    # No perdemos información, ya que solo queremos ver la distribución
+    df_tmp <- df
+    df_tmp[,col] <- rescale(df_tmp[,col])  
+    
+    p <- df_tmp %>% drop_na() %>% 
+      ggplot(aes(x=df[,col])) +
+        geom_histogram(aes(y =after_stat(density)),bins =60,colour="black", fill="white")+
+        geom_density(alpha=.2, fill="#FF6666")+
+        labs(
+          x=col,
+          y=""
+        ) +
+      theme_minimal()
+  })
+  plots
+}
+plots <- density_histogram_plot_all(filter_credit_ranking)
+grid.arrange(grobs=plots, ncol=4, as.table=TRUE,padding = unit(0.5, "line"))
+
+```
+
