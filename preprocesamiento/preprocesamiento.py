@@ -1,23 +1,9 @@
-# Importaciones para manejo de datos y dataframes
 import numpy as np
-from numpy.random import seed
 import pandas as pd
-
-# Importaciones para manejo de archivos y llamadas al OS
 import os as os
-import warnings
 
-# Importaciones para manejo de gráficos
-import pylab as plt
-import seaborn as sns
-from matplotlib.colors import ListedColormap
-
-# Sklearn
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import OrdinalEncoder, OneHotEncoder
+from sklearn.preprocessing import OrdinalEncoder
 from sklearn.impute import KNNImputer
-from sklearn.neighbors import LocalOutlierFactor
 
 # Cargamos csv con los datos de train
 df_train = pd.read_csv("../data_raw/training_data.csv", sep=",", header=0, na_values=['?', '', 'NA'])
