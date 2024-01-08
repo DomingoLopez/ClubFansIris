@@ -63,7 +63,7 @@ test_data = df_test_encoded.drop(['ID'], axis=1, inplace=False)
 
 imputed_X_test = pd.DataFrame(Knn_imp_train.transform(test_data), columns=test_data.columns)
 
-result_df_test = test_id.to_frame().join(other=imputed_X_train)
+result_df_test = test_id.to_frame().join(other=imputed_X_test)
 
 # ### Exportación a carpeta de Preprocesamiento
 
