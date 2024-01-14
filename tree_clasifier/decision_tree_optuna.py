@@ -30,12 +30,6 @@ def objective(trial):
 
     df_train, df_test = encoder(df_train, df_test)
 
-    removing_outlier = trial.suggest_categorical("removing_outlier", [True, False])
-
-    if removing_outlier:
-        df_train = outliers_remove(df_train.dropna())
-        # print(df_train)
-
     df_train, df_validation = train_validation_split(df_train)
 
     imputer_type = trial.suggest_categorical("imputer_type", ["KNN", "SI"])
@@ -53,6 +47,11 @@ def objective(trial):
     df_train, df_validation, df_test = imputation(
         df_train, df_validation, df_test, imputer_func
     )
+
+    removing_outlier = trial.suggest_categorical("removing_outlier", [True, False])
+
+    if removing_outlier:
+        df_train = outliers_remove(df_train)
 
     scaling = trial.suggest_categorical("scaling", [True, False])
 
@@ -98,7 +97,7 @@ def objective(trial):
             df_train, df_validation, df_test, feature_selector
         )
 
-    model = trial.suggest_categorical("model", ["BOOSTING", "RF", "BAGGING", "SIMPLE"])
+    model = trial.suggest_categorical("model", ["BOOSTING"])#,"BOOSTING" "RF", "BAGGING", "SIMPLE"])
     n_trees = trial.suggest_int("n_trees", low=100, high=1000, step=100)
     depth = trial.suggest_int("depth", 2, 6)
     criterion = trial.suggest_categorical("criterion", ["gini", "entropy", "log_loss"])
