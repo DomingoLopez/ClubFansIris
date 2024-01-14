@@ -42,8 +42,7 @@ df_test = pd.read_csv(
 
 df_train, df_test = encoder(df_train, df_test)
 
-if params["removing_outlier"]:
-    df_train = outliers_remove(df_train.dropna())
+df_train, df_validation = train_validation_split(df_train)
 
 if params["imputer_type"] == "KNN":
     imputer_func = KNNImputer(n_neighbors=params["n_neighbors"])
@@ -54,6 +53,9 @@ elif params["imputer_type"] == "SI":
 df_train, df_test = imputation_test(
     df_train, df_test, imputer_func
 )
+
+if params["removing_outlier"]:
+    df_train = outliers_remove(df_train.dropna())
 
 if params["scaling"]:
     if params["scaling_method"] == "STANDARD":
