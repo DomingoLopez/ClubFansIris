@@ -1,0 +1,115 @@
+Primero el private, segundo el public
+
+tuning__20240112-150149__1032.csv
+Complete · 3d ago
+0.602
+
+0.609
+
+tuning__20240112-140332__1800.csv
+Complete · 3d ago
+0.641
+
+0.605
+
+tuning__20240112-123701__1219.csv
+Complete · 3d ago
+0.583
+
+0.639
+
+tuning__20240112-110313__569.csv
+Complete · 3d ago
+0.653
+
+0.596
+
+submit.csv
+Complete · 3d ago
+0.57
+
+0.626
+
+tuning__20240111-182909__100.csv
+Complete · 4d ago
+0.647
+
+0.609
+
+tuning__20240111-172949__85.csv
+Complete · 4d ago
+0.602
+
+0.596
+
+tuning__20240111-165637__615.csv
+Complete · 4d ago
+0.673
+
+0.639
+
+submit.csv
+Complete · 6d ago
+0.608
+
+0.643
+
+submit.csv
+Complete · 6d ago
+0.628
+
+0.63
+
+submit.csv
+Complete · 6d ago
+0.544
+
+0.57
+
+submit.csv
+Complete · 6d ago
+0.544
+
+0.575
+
+submit.csv
+Complete · 7d ago
+0.589
+
+0.635
+
+submit.csv
+Complete · 7d ago
+0.608
+
+0.618
+
+submit.csv
+Complete · 7d ago
+0.576
+
+0.553
+
+submit.csv
+Complete · 7d ago
+0.634
+
+0.592
+
+result.csv
+Complete · 10d ago
+0.583
+
+0.57
+
+result.csv
+Complete · 10d ago
+0.589
+
+0.592
+
+result.csv
+Complete · 10d ago
+0.608
+
+0.609
