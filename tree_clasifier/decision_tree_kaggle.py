@@ -19,7 +19,7 @@ from copy import deepcopy
 import math
 import ast
 
-# params = {'imputer_type': 'SI', 'strategy': 'median', 'scaling': False, 'resampling': False, 'select_features': False, 'model': 'BAGGING', 'n_trees': 900, 'depth': 5, 'criterion': 'log_loss', 'splitter': 'random', 'balance_weights': 'balanced'}
+# params = {'imputer_type': 'SI', 'strategy': 'median', 'removing_outlier': True, 'scaling': False, 'resampling': False, 'PCA_decomposition': False, 'select_features': True, 'feature_selector_type': 'KBEST', 'k': 39, 'model': 'BAGGING', 'n_trees': 300, 'depth': 6, 'criterion': 'log_loss', 'splitter': 'random', 'balance_weights': None} 
 params_path = "submission_kaggle/params.txt"
 
 with open(params_path) as f: 
