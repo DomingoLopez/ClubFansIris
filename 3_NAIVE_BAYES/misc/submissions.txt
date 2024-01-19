@@ -1,0 +1,162 @@
+tuning__20240113-032125__718.csv
+Complete · 4d ago
+
+0.57
+
+0.557
+tuning__20240113-030321__721.csv
+Complete · 4d ago
+
+0.506
+
+0.51
+tuning__20240113-025300__336.csv
+Complete · 4d ago
+
+0.397
+
+0.429
+tuning__20240113-021645__551.csv
+Complete · 4d ago
+
+0.557
+
+0.57
+tuning__20240113-020119__144.csv
+Complete · 4d ago
+
+0.583
+
+0.562
+tuning__20240112-221753__896.csv
+Complete · 4d ago
+
+0.487
+
+0.562
+tuning__20240112-214147__907.csv
+Complete · 4d ago
+
+0.41
+
+0.433
+tuning__20240112-212910__392.csv
+Complete · 4d ago
+
+0.397
+
+0.399
+tuning__20240110-122951__642.csv
+Complete · 7d ago
+
+0.544
+
+0.545
+tuning__20240110-120047__502.csv
+Complete · 7d ago
+
+0.487
+
+0.562
+tuning__20240110-094131__166.csv
+Complete · 7d ago
+
+0.57
+
+0.583
+tuning__20240109-182612__925.csv
+Complete · 7d ago
+
+0.615
+
+0.596
+tuning__20240109-170403__378.csv
+Complete · 7d ago
+
+0.557
+
+0.557
+testing_3.csv
+Complete · 8d ago · [NB] Probando con feat. scaling y PCA
+
+0.525
+
+0.532
+testing_2.csv
+Complete · 8d ago · [NB] Ídem
+
+0.512
+
+0.506
+testing.csv
+Complete · 8d ago · [NB] Verificando escalados
+
+0.205
+
+0.253
+optuna__test_1.csv
+Complete · 8d ago · [NB] Ajustando F1
+
+0.269
+
+0.27
+optuna__test.csv
+Complete · 8d ago · [NB] Probando con optimizador
+
+0.282
+
+0.283
+nb_categorical__raw.csv
+Complete · 8d ago · [NB] Probando CategoricalNB
+
+0.519
+
+0.566
+kaggle_out.csv
+Complete · 8d ago · [NB] Pruebas con PCA ahora
+
+0.442
+
+0.502
+kaggle_out.csv
+Complete · 8d ago · [NB] Probando con preprocesado nuevo sin más
+
+0.391
+
+0.446
+kaggle_out.csv
+Complete · 11d ago
+
+0.076
+
+0.09
+kaggle_out.csv
+Complete · 11d ago
+
+0.237
+
+0.261
+kaggle_out.csv
+Complete · 11d ago
+
+0.205
+
+0.223
+kaggle_out.csv
+Complete · 11d ago
+
+0.352
+
+0.326
+kaggle_out.csv
+Complete · 11d ago
+
+0.423
+
+0.364
+kaggle_out.csv
+Complete · 13d ago · Naive testing
+
+0.41
+
+0.381

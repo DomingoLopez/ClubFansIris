@@ -1,0 +1,1 @@
+{'standarize': True, 'scaler': 'power', 'lof': True, 'lof_neighs': 12, 'feature_selection': True, 'feat_sel_type': 'top', 'top_k': 24, 'delete_correlated': False, 'pca': False, 'resample': False}

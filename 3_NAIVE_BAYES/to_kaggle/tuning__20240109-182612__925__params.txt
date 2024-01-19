@@ -1,0 +1,1 @@
+{'scaler': 'quan', 'lof': False, 'feature_selection': True, 'feat_sel_type': 'top', 'top_k': 13, 'delete_correlated': False, 'pca': False, 'resample': False, 'nb_type': 'discrete', 'discr_bins': 16, 'discr_encoder': 'ordinal', 'discr_strat': 'uniform'}
